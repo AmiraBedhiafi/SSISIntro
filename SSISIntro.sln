@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISIntro", "SSISIntro\SSISIntro.dtproj", "{31D2FE90-788B-4D52-A86F-CC9BEF60C035}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31D2FE90-788B-4D52-A86F-CC9BEF60C035}.Development|Default.ActiveCfg = Development
+		{31D2FE90-788B-4D52-A86F-CC9BEF60C035}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9024A72F-76E4-471E-9F17-05905B09F580}
+	EndGlobalSection
+EndGlobal
