@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{0A20594D-DFE1-4F13-B20D-0620B2706858}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{41DCDA4D-384E-4A0B-9920-443E95D0DE1E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1169,6 +1169,21 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upsert"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{F569F932-75B0-4844-A190-72821565F65E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upsert"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1189,7 +1204,11 @@
         <NodeLayout
           Size="295,42"
           Id="Package\Adding the SOMME and SYSDATE columns"
-          TopLeft="64,147" />
+          TopLeft="327,48" />
+        <NodeLayout
+          Size="111,42"
+          Id="Package\Upsert"
+          TopLeft="60,170" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
