@@ -1,0 +1,603 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/28/2020 7:52:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-2VQHHTO"
+  DTS:CreatorName="DESKTOP-2VQHHTO\ACER"
+  DTS:DTSID="{6C199CF6-089F-44F2-8B85-A81F83BE44F9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{43312277-EBF5-40F4-A915-BF315F851E3D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loading Data file into DB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{3198A246-63F9-4CBD-83AE-AFFAC5456E3E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading Data file into DB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Loading Data file into DB\Data file source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="Data file source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading Data file into DB\Data file source.Connections[FlatFileConnection]"
+                  connectionManagerID="{9D918D13-4E32-4185-BD86-A9054BAB6EAA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FlatFileCM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 0]"
+                      length="50"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]"
+                      name="numero"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 1]"
+                      length="50"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]"
+                      name="nom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 2]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]"
+                      name="val_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 3]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]"
+                      name="val_2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 4]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]"
+                      name="val_3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 5]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]"
+                      name="val_4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 6]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]"
+                      name="val_5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 7]"
+                      length="50"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]"
+                      name="decision"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 4" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 5" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 6" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Loading Data file into DB\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[Workshop].[data]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Loading Data file into DB\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{C392C892-7660-43E2-B39B-AAC7A59FB705}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.WorkshopBI]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[numero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numero"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[numero]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nom"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[val_1]"
+                      cachedDataType="r8"
+                      cachedName="val_1"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_1]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[val_2]"
+                      cachedDataType="r8"
+                      cachedName="val_2"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_2]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[val_3]"
+                      cachedDataType="r8"
+                      cachedName="val_3"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_3]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[val_4]"
+                      cachedDataType="r8"
+                      cachedName="val_4"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_4]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[val_5]"
+                      cachedDataType="r8"
+                      cachedName="val_5"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_5]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]" />
+                    <inputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[decision]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decision"
+                      externalMetadataColumnId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[decision]"
+                      lineageId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_1]"
+                      dataType="r8"
+                      name="val_1" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_2]"
+                      dataType="r8"
+                      name="val_2" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_3]"
+                      dataType="r8"
+                      name="val_3" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_4]"
+                      dataType="r8"
+                      name="val_4" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[val_5]"
+                      dataType="r8"
+                      name="val_5" />
+                    <externalMetadataColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="decision" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Loading Data file into DB\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Loading Data file into DB\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Loading Data file into DB\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Loading Data file into DB\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Loading Data file into DB.Paths[Sortie de source de fichier plat]"
+              endId="Package\Loading Data file into DB\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Loading Data file into DB\Data file source.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Loading Data file into DB"
+          TopLeft="137,89" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loading Data file into DB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Loading Data file into DB\Data file source"
+          TopLeft="21,52" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Loading Data file into DB\Destination OLE DB"
+          TopLeft="318,78" />
+        <EdgeLayout
+          Id="Package\Loading Data file into DB.Paths[Sortie de source de fichier plat]"
+          TopLeft="176,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142,26"
+              Start="0,0"
+              End="134.5,26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67,0"
+                    Point2="71,0"
+                    Point3="71,4" />
+                  <mssgle:LineSegment
+                    End="71,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71,22"
+                    Point2="71,26"
+                    Point3="75,26" />
+                  <mssgle:LineSegment
+                    End="134.5,26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loading Data file into DB\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
