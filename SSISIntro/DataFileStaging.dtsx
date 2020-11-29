@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{41DCDA4D-384E-4A0B-9920-443E95D0DE1E}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{93A614BB-D85A-4603-A0F0-A1EED5F688C3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1181,7 +1181,1893 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\Upsert\Data DB source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Data DB source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[Workshop].[data]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upsert\Data DB source.Connections[OleDbConnection]"
+                  connectionManagerID="{C392C892-7660-43E2-B39B-AAC7A59FB705}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.WorkshopBI]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB]"
+                  isSorted="true"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[numero]"
+                      length="50"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[numero]"
+                      name="numero"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[nom]"
+                      length="50"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[nom]"
+                      name="nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_1]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_1]"
+                      name="val_1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_2]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_2]"
+                      name="val_2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_3]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_3]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_3]"
+                      name="val_3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_4]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_4]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_4]"
+                      name="val_4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_5]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_5]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_5]"
+                      name="val_5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[decision]"
+                      length="3"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[decision]"
+                      name="decision"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[somme]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[somme]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[somme]"
+                      name="somme"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[date_systeme]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[date_systeme]"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[date_systeme]"
+                      name="date_systeme"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_1]"
+                      dataType="r8"
+                      name="val_1" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_2]"
+                      dataType="r8"
+                      name="val_2" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_3]"
+                      dataType="r8"
+                      name="val_3" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_4]"
+                      dataType="r8"
+                      name="val_4" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[val_5]"
+                      dataType="r8"
+                      name="val_5" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="decision" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[somme]"
+                      dataType="r8"
+                      name="somme" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].ExternalColumns[date_systeme]"
+                      dataType="dbDate"
+                      name="date_systeme" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[numero]"
+                      name="numero" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[nom]"
+                      name="nom" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_1]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_1]"
+                      name="val_1" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_2]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_2]"
+                      name="val_2" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_3]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_3]"
+                      name="val_3" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_4]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_4]"
+                      name="val_4" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_5]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[val_5]"
+                      name="val_5" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[decision]"
+                      name="decision" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[somme]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[somme]"
+                      name="somme" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[date_systeme]"
+                      dataType="dbDate"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[date_systeme]"
+                      name="date_systeme" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Data file source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="Data file source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upsert\Data file source.Connections[FlatFileConnection]"
+                  connectionManagerID="{9D918D13-4E32-4185-BD86-A9054BAB6EAA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FlatFileCM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat]"
+                  isSorted="true"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 0]"
+                      length="50"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]"
+                      name="numero"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 1]"
+                      length="50"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]"
+                      name="nom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 2]"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]"
+                      name="val_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 3]"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]"
+                      name="val_2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 4]"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]"
+                      name="val_3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 5]"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]"
+                      name="val_4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 6]"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]"
+                      name="val_5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 7]"
+                      length="50"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]"
+                      name="decision"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 4" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 5" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 6" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].ExternalColumns[Column 7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Data table destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Data table destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[Workshop].[data]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upsert\Data table destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C392C892-7660-43E2-B39B-AAC7A59FB705}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.WorkshopBI]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[numeroSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numeroSRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[numero]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[nomSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nomSRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[val_1SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_1SRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_1]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[val_2SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_2SRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_2]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[val_3SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_3SRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_3]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[val_4SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_4SRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_4]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[val_5SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_5SRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_5]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[decisionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decisionSRC"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[decision]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[Sum]"
+                      cachedDataType="r8"
+                      cachedName="Sum"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[somme]"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[Sum]" />
+                    <inputColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].Columns[SysDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SysDate"
+                      externalMetadataColumnId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[date_systeme]"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[SysDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="numero" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_1]"
+                      dataType="r8"
+                      name="val_1" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_2]"
+                      dataType="r8"
+                      name="val_2" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_3]"
+                      dataType="r8"
+                      name="val_3" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_4]"
+                      dataType="r8"
+                      name="val_4" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[val_5]"
+                      dataType="r8"
+                      name="val_5" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[decision]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="decision" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[somme]"
+                      dataType="r8"
+                      name="somme" />
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB].ExternalColumns[date_systeme]"
+                      dataType="dbDate"
+                      name="date_systeme" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Data table destination.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Data table destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data table destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Data table destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Data table destination.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Left Outer Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Jointure de fusion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine deux flux de données triés en un seul à l'aide de la jointure FULL, LEFT ou INNER. Nous recommandons cette transformation lorsque les flux de données peuvent être triés au niveau de leurs sources."
+              name="Left Outer Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de jointure à effectuer."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre de colonnes dans la clé de tri."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs NULL sont traitées comme valeurs égales."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indique le nombre maximal de mémoires tampons demandées par entrée avant blocage."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion]"
+                  hasSideEffects="true"
+                  name="Entrée gauche de jointure de fusion">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[numero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numero"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[numero]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nom"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_1]"
+                      cachedDataType="r8"
+                      cachedName="val_1"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_1]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_2]"
+                      cachedDataType="r8"
+                      cachedName="val_2"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_2]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_3]"
+                      cachedDataType="r8"
+                      cachedName="val_3"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_3]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_4]"
+                      cachedDataType="r8"
+                      cachedName="val_4"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_4]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_5]"
+                      cachedDataType="r8"
+                      cachedName="val_5"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[val_5]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[decision]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="decision"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[decision]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[somme]"
+                      cachedDataType="r8"
+                      cachedName="somme"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[somme]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[date_systeme]"
+                      cachedDataType="dbDate"
+                      cachedName="date_systeme"
+                      lineageId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB].Columns[date_systeme]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion]"
+                  hasSideEffects="true"
+                  name="Entrée droite de jointure de fusion">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[numero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numero"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[numero]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nom"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_1]"
+                      cachedDataType="r8"
+                      cachedName="val_1"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_1]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_2]"
+                      cachedDataType="r8"
+                      cachedName="val_2"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_2]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_3]"
+                      cachedDataType="r8"
+                      cachedName="val_3"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_3]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_4]"
+                      cachedDataType="r8"
+                      cachedName="val_4"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_4]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_5]"
+                      cachedDataType="r8"
+                      cachedName="val_5"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[val_5]" />
+                    <inputColumn
+                      refId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[decision]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decision"
+                      lineageId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat].Columns[decision]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion]"
+                  isSorted="true"
+                  name="Sortie de jointure de fusion">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroDB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroDB]"
+                      name="numeroDB"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[numero]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomDB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomDB]"
+                      name="nomDB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[nom]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1DB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1DB]"
+                      name="val_1DB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_1]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2DB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2DB]"
+                      name="val_2DB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_2]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3DB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3DB]"
+                      name="val_3DB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_3]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4DB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4DB]"
+                      name="val_4DB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_4]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5DB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5DB]"
+                      name="val_5DB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[val_5]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionDB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionDB]"
+                      name="decisionDB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[decision]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[sommeDB]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[sommeDB]"
+                      name="sommeDB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[somme]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[date_systemeDB]"
+                      dataType="dbDate"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[date_systemeDB]"
+                      name="date_systemeDB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion].Columns[date_systeme]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]"
+                      name="numeroSRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[numero]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomSRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomSRC]"
+                      name="nomSRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[nom]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]"
+                      name="val_1SRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_1]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]"
+                      name="val_2SRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_2]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]"
+                      name="val_3SRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_3]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]"
+                      name="val_4SRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_4]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]"
+                      dataType="r8"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]"
+                      name="val_5SRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[val_5]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]"
+                      name="decisionSRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Colonne d'entrée associée à cette colonne de sortie"
+                          name="InputColumnID">#{Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion].Columns[decision]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Split new or update"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
+              name="Split new or update"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]"
+                  description="Entrée vers la transformation de fractionnement conditionnel"
+                  name="Entrée de fractionnement conditionnel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel].Columns[numeroSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numeroSRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel].Columns[numeroDB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numeroDB"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroDB]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Split new or update.Outputs[NewInsert]"
+                  description="Sortie 1 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="NewInsert"
+                  synchronousInputId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">[ISNULL](#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroDB]}) &amp;&amp; ![ISNULL](#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(numeroDB) &amp;&amp; !ISNULL(numeroSRC)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Split new or update.Outputs[Update]"
+                  description="Sortie 2 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Update"
+                  synchronousInputId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">![ISNULL](#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]}) &amp;&amp; ![ISNULL](#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroDB]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(numeroSRC) &amp;&amp; !ISNULL(numeroDB)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Split new or update.Outputs[Sortie par défaut de fractionnement conditionnel]"
+                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  name="Sortie par défaut de fractionnement conditionnel"
+                  synchronousInputId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Split new or update.Outputs[Sortie d'erreur de fractionnement conditionnel]"
+                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de fractionnement conditionnel"
+                  synchronousInputId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Split new or update.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Split new or update.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Split new or update.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Split new or update.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Sum and Sysdate conditions 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Sum and Sysdate conditions 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[val_1SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_1SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[val_2SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_2SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[val_3SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_3SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[val_4SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_4SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[val_5SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_5SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée].Columns[decisionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decisionSRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[Sum]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[Sum]"
+                      name="Sum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]} == "NON") ? 0 : (#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(decisionSRC == "NON") ? 0 : (val_1SRC + val_2SRC + val_3SRC + val_4SRC + val_5SRC)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[SysDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée].Columns[SysDate]"
+                      name="SysDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Sum and Sysdate conditions 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Sum and Sysdate conditions 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[val_1SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_1SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[val_2SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_2SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[val_3SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_3SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[val_4SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_4SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[val_5SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_5SRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée].Columns[decisionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decisionSRC"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[SumUpdated]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[SumUpdated]"
+                      name="SumUpdated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]} == "NON") ? 0 : (#{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]} + #{Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(decisionSRC == "NON") ? 0 : (val_1SRC + val_2SRC + val_3SRC + val_4SRC + val_5SRC)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[DateSysUpdated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[DateSysUpdated]"
+                      name="DateSysUpdated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upsert\Update Data table"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Update Data table"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">
+UPDATE [Workshop].[data]
+   SET [nom] = ?
+      ,[val_1] = ?
+      ,[val_2] = ?
+      ,[val_3] = ?
+      ,[val_4] = ?
+      ,[val_5] = ?
+      ,[decision] = ?
+      ,[somme] = ?
+      ,[date_systeme] = ?
+ WHERE [numero] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upsert\Update Data table.Connections[OleDbConnection]"
+                  connectionManagerID="{C392C892-7660-43E2-B39B-AAC7A59FB705}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.WorkshopBI]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[numeroSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="numeroSRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_9]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[numeroSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[nomSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nomSRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[nomSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[val_1SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_1SRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_1SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[val_2SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_2SRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_2SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[val_3SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_3SRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_3SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[val_4SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_4SRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_4SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[val_5SRC]"
+                      cachedDataType="r8"
+                      cachedName="val_5SRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[val_5SRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[decisionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="decisionSRC"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion].Columns[decisionSRC]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[SumUpdated]"
+                      cachedDataType="r8"
+                      cachedName="SumUpdated"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[SumUpdated]" />
+                    <inputColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].Columns[DateSysUpdated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateSysUpdated"
+                      externalMetadataColumnId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée].Columns[DateSysUpdated]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="r8"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      dataType="r8"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      dataType="r8"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      dataType="r8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      dataType="r8"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      dataType="dbDate"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upsert\Update Data table.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upsert\Update Data table.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upsert\Update Data table.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Update Data table.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upsert\Update Data table.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upsert\Update Data table.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Upsert.Paths[NewInsert]"
+              endId="Package\Upsert\Sum and Sysdate conditions 1.Inputs[Entrée de colonne dérivée]"
+              name="NewInsert"
+              startId="Package\Upsert\Split new or update.Outputs[NewInsert]" />
+            <path
+              refId="Package\Upsert.Paths[Sortie de colonne dérivée]"
+              endId="Package\Upsert\Update Data table.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Upsert\Sum and Sysdate conditions 2.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Upsert.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Upsert\Data table destination.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Upsert\Sum and Sysdate conditions 1.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Upsert.Paths[Sortie de jointure de fusion]"
+              endId="Package\Upsert\Split new or update.Inputs[Entrée de fractionnement conditionnel]"
+              name="Sortie de jointure de fusion"
+              startId="Package\Upsert\Left Outer Join.Outputs[Sortie de jointure de fusion]" />
+            <path
+              refId="Package\Upsert.Paths[Sortie de source de fichier plat]"
+              endId="Package\Upsert\Left Outer Join.Inputs[Entrée droite de jointure de fusion]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Upsert\Data file source.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\Upsert.Paths[Sortie de source OLE DB]"
+              endId="Package\Upsert\Left Outer Join.Inputs[Entrée gauche de jointure de fusion]"
+              name="Sortie de source OLE DB"
+              startId="Package\Upsert\Data DB source.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Upsert.Paths[Update]"
+              endId="Package\Upsert\Sum and Sysdate conditions 2.Inputs[Entrée de colonne dérivée]"
+              name="Update"
+              startId="Package\Upsert\Split new or update.Outputs[Update]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1198,13 +3084,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="200,42"
-          Id="Package\Loading Data file into DB"
-          TopLeft="57,47" />
-        <NodeLayout
           Size="295,42"
           Id="Package\Adding the SOMME and SYSDATE columns"
           TopLeft="327,48" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Loading Data file into DB"
+          TopLeft="57,47" />
         <NodeLayout
           Size="111,42"
           Id="Package\Upsert"
@@ -1213,10 +3099,115 @@
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Adding the SOMME and SYSDATE columns">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Adding the SOMME and SYSDATE columns\Data file source"
+          TopLeft="84,54" />
+        <NodeLayout
+          Size="353,42"
+          Id="Package\Adding the SOMME and SYSDATE columns\Summing the 5 float columns and the SYSDATE column"
+          TopLeft="91,128" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Adding the SOMME and SYSDATE columns\Data DB table"
+          TopLeft="499,174" />
+        <EdgeLayout
+          Id="Package\Adding the SOMME and SYSDATE columns.Paths[Sortie de source de fichier plat]"
+          TopLeft="161.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106,32"
+              Start="0,0"
+              End="106,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="102,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="102,16"
+                    Point2="106,16"
+                    Point3="106,20" />
+                  <mssgle:LineSegment
+                    End="106,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Adding the SOMME and SYSDATE columns.Paths[Sortie de colonne dérivée]"
+          TopLeft="444,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55,46"
+              Start="0,0"
+              End="47.5,46">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5,0"
+                    Point2="27.5,0"
+                    Point3="27.5,4" />
+                  <mssgle:LineSegment
+                    End="27.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,42"
+                    Point2="27.5,46"
+                    Point3="31.5,46" />
+                  <mssgle:LineSegment
+                    End="47.5,46" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Adding the SOMME and SYSDATE columns\Data DB table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Loading Data file into DB">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="155,42"
           Id="Package\Loading Data file into DB\Data file source"
@@ -1256,7 +3247,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1276,44 +3269,100 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Adding the SOMME and SYSDATE columns">
+    design-time-name="Package\Upsert">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="155,42"
-          Id="Package\Adding the SOMME and SYSDATE columns\Data file source"
-          TopLeft="84,54" />
+          Id="Package\Upsert\Data file source"
+          TopLeft="524,46" />
         <NodeLayout
-          Size="353,42"
-          Id="Package\Adding the SOMME and SYSDATE columns\Summing the 5 float columns and the SYSDATE column"
-          TopLeft="91,128" />
+          Size="227,42"
+          Id="Package\Upsert\Sum and Sysdate conditions 1"
+          TopLeft="29,192" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Upsert\Update Data table"
+          TopLeft="391,335" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Upsert\Data table destination"
+          TopLeft="31,283" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Upsert\Data DB source"
+          TopLeft="111,53" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Upsert\Sum and Sysdate conditions 2"
+          TopLeft="367,254" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Upsert\Split new or update"
+          TopLeft="260,175" />
         <EdgeLayout
-          Id="Package\Adding the SOMME and SYSDATE columns.Paths[Sortie de source de fichier plat]"
-          TopLeft="161.5,96">
+          Id="Package\Upsert.Paths[Update]"
+          TopLeft="346.5,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="106,32"
+              EndConnector="134,37"
               Start="0,0"
-              End="106,24.5">
+              End="134,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12" />
+                    End="0,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
                   <mssgle:LineSegment
-                    End="102,16" />
+                    End="130,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="102,16"
-                    Point2="106,16"
-                    Point3="106,20" />
+                    Point1="130,18.5"
+                    Point2="134,18.5"
+                    Point3="134,22.5" />
                   <mssgle:LineSegment
-                    End="106,24.5" />
+                    End="134,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.71970703125,23.5,32.5605859375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upsert.Paths[Sortie de colonne dérivée1]"
+          TopLeft="142.5,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19,49"
+              Start="0,0"
+              End="-19,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-15,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15,24.5"
+                    Point2="-19,24.5"
+                    Point3="-19,28.5" />
+                  <mssgle:LineSegment
+                    End="-19,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1322,36 +3371,162 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Adding the SOMME and SYSDATE columns\Data DB table"
-          TopLeft="499,174" />
         <EdgeLayout
-          Id="Package\Adding the SOMME and SYSDATE columns.Paths[Sortie de colonne dérivée]"
-          TopLeft="444,149">
+          Id="Package\Upsert.Paths[Sortie de colonne dérivée]"
+          TopLeft="477.5,296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="55,46"
+              EndConnector="0,39"
               Start="0,0"
-              End="47.5,46">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="23.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.5,0"
-                    Point2="27.5,0"
-                    Point3="27.5,4" />
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upsert.Paths[NewInsert]"
+          TopLeft="319,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176.5,17"
+              Start="0,0"
+              End="-176.5,9.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="27.5,42" />
+                    End="0,-18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.5,42"
-                    Point2="27.5,46"
-                    Point3="31.5,46" />
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="-4,-22.5" />
                   <mssgle:LineSegment
-                    End="47.5,46" />
+                    End="-172.5,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172.5,-22.5"
+                    Point2="-176.5,-22.5"
+                    Point3="-176.5,-18.5" />
+                  <mssgle:LineSegment
+                    End="-176.5,9.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-111.53638671875,-17.5,46.5727734375,9.40234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Upsert\Left Outer Join"
+          TopLeft="308,96" />
+        <EdgeLayout
+          Id="Package\Upsert.Paths[Sortie de source OLE DB]"
+          TopLeft="267,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,43"
+              Start="0,0"
+              End="33.5,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5,0"
+                    Point2="20.5,0"
+                    Point3="20.5,4" />
+                  <mssgle:LineSegment
+                    End="20.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.5,39"
+                    Point2="20.5,43"
+                    Point3="24.5,43" />
+                  <mssgle:LineSegment
+                    End="33.5,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upsert.Paths[Sortie de source de fichier plat]"
+          TopLeft="524,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-65,50"
+              Start="0,0"
+              End="-57.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-28.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.5,0"
+                    Point2="-32.5,0"
+                    Point3="-32.5,4" />
+                  <mssgle:LineSegment
+                    End="-32.5,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.5,46"
+                    Point2="-32.5,50"
+                    Point3="-36.5,50" />
+                  <mssgle:LineSegment
+                    End="-57.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upsert.Paths[Sortie de jointure de fusion]"
+          TopLeft="383.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.5,37"
+              Start="0,0"
+              End="-9.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9965635738832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9965635738832"
+                    Point2="0,21.9965635738832"
+                    Point3="-4,21.9965635738832" />
+                  <mssgle:LineSegment
+                    End="-5.5,21.9965635738832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.5,21.9965635738832"
+                    Point2="-9.5,21.9965635738832"
+                    Point3="-9.5,25.9965635738832" />
+                  <mssgle:LineSegment
+                    End="-9.5,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1364,7 +3539,20 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Adding the SOMME and SYSDATE columns\Data DB table">
+    design-time-name="Package\Upsert\Data table destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upsert\Data DB source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
