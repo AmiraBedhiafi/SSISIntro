@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{F73A9B6F-F44B-4D13-B341-9842736D000B}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{3967253B-8C21-4AEA-AEA3-16B56373026B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5301,6 +5301,16 @@ UPDATE [Workshop].[data]
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EB543849-AAB9-49DF-B931-8195415D1AC6}"
+      DTS:From="Package\Loading Data file into DB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Split data file to 2 files" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -5312,7 +5322,7 @@ UPDATE [Workshop].[data]
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="295,42"
           Id="Package\Adding the SOMME and SYSDATE columns"
@@ -5322,17 +5332,51 @@ UPDATE [Workshop].[data]
           Id="Package\Loading Data file into DB"
           TopLeft="41,33" />
         <NodeLayout
-          Size="212,42"
-          Id="Package\Upsert using MERGE JOIN"
-          TopLeft="47,195" />
+          Size="186,42"
+          Id="Package\Split data file to 2 files"
+          TopLeft="398,69" />
         <NodeLayout
           Size="189,42"
           Id="Package\Upsert using LOOKUP"
           TopLeft="46,269" />
         <NodeLayout
-          Size="186,42"
-          Id="Package\Split data file to 2 files"
-          TopLeft="398,69" />
+          Size="212,42"
+          Id="Package\Upsert using MERGE JOIN"
+          TopLeft="47,195" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="241,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157,36"
+              Start="0,0"
+              End="149.5,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="74.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.5,0"
+                    Point2="78.5,0"
+                    Point3="78.5,4" />
+                  <mssgle:LineSegment
+                    End="78.5,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.5,32"
+                    Point2="78.5,36"
+                    Point3="82.5,36" />
+                  <mssgle:LineSegment
+                    End="149.5,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5491,6 +5535,366 @@ UPDATE [Workshop].[data]
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Loading Data file into DB\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Split data file to 2 files">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Split data file to 2 files\Data flat file source"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Split data file to 2 files\OUI or NON condition"
+          TopLeft="317,52" />
+        <EdgeLayout
+          Id="Package\Split data file to 2 files.Paths[Sortie de source de fichier plat]"
+          TopLeft="233,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,-8"
+              Start="0,0"
+              End="76.5,-8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38,0"
+                    Point2="42,0"
+                    Point3="42,-4" />
+                  <mssgle:LineSegment
+                    End="42,-4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42,-4"
+                    Point2="42,-8"
+                    Point3="46,-8" />
+                  <mssgle:LineSegment
+                    End="76.5,-8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Split data file to 2 files\DATA OUI file destination"
+          TopLeft="41,164" />
+        <EdgeLayout
+          Id="Package\Split data file to 2 files.Paths[DATA_OUI]"
+          TopLeft="380.333333333333,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-237.333333333333,70"
+              Start="0,0"
+              End="-237.333333333333,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3582089552239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3582089552239"
+                    Point2="0,28.3582089552239"
+                    Point3="-4,28.3582089552239" />
+                  <mssgle:LineSegment
+                    End="-233.333333333333,28.3582089552239" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-233.333333333333,28.3582089552239"
+                    Point2="-237.333333333333,28.3582089552239"
+                    Point3="-237.333333333333,32.3582089552239" />
+                  <mssgle:LineSegment
+                    End="-237.333333333333,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-142.796197916667,33.3582089552239,48.2590625,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Split data file to 2 files\DATA NON file destination"
+          TopLeft="348,177" />
+        <EdgeLayout
+          Id="Package\Split data file to 2 files.Paths[DATA_NON]"
+          TopLeft="439.666666666667,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.8333333333334,83"
+              Start="0,0"
+              End="12.8333333333334,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6247334754798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.6247334754798"
+                    Point2="0,33.6247334754798"
+                    Point3="4,33.6247334754798" />
+                  <mssgle:LineSegment
+                    End="8.83333333333337,33.6247334754798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.83333333333337,33.6247334754798"
+                    Point2="12.8333333333334,33.6247334754798"
+                    Point3="12.8333333333334,37.6247334754798" />
+                  <mssgle:LineSegment
+                    End="12.8333333333334,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.0984309895833,38.6247334754798,51.0301953125,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Upsert using LOOKUP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Upsert using LOOKUP\Data flat file"
+          TopLeft="167,41" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Upsert using LOOKUP\Lookup Data table"
+          TopLeft="282,136" />
+        <EdgeLayout
+          Id="Package\Upsert using LOOKUP.Paths[Sortie de source de fichier plat]"
+          TopLeft="235.5,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.5,53"
+              Start="0,0"
+              End="130.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="126.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.5,26.5"
+                    Point2="130.5,26.5"
+                    Point3="130.5,30.5" />
+                  <mssgle:LineSegment
+                    End="130.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Upsert using LOOKUP\Sum and SYSDATE conditions 1"
+          TopLeft="17,100" />
+        <EdgeLayout
+          Id="Package\Upsert using LOOKUP.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="282,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26,-36"
+              Start="0,0"
+              End="-18.5,-36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-9,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,0"
+                    Point2="-13,0"
+                    Point3="-13,-4" />
+                  <mssgle:LineSegment
+                    End="-13,-32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,-32"
+                    Point2="-13,-36"
+                    Point3="-17,-36" />
+                  <mssgle:LineSegment
+                    End="-18.5,-36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.50201171875,1,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Upsert using LOOKUP\Data table destination"
+          TopLeft="44,191" />
+        <EdgeLayout
+          Id="Package\Upsert using LOOKUP.Paths[Sortie de colonne dérivée]"
+          TopLeft="136.5,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Upsert using LOOKUP\Update data table"
+          TopLeft="485,220" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Upsert using LOOKUP\Sum and SYSDATE conditions 2"
+          TopLeft="482,111" />
+        <EdgeLayout
+          Id="Package\Upsert using LOOKUP.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="450,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32,-25"
+              Start="0,0"
+              End="24.5,-25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="12,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,0"
+                    Point2="16,0"
+                    Point3="16,-4" />
+                  <mssgle:LineSegment
+                    End="16,-21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,-21"
+                    Point2="16,-25"
+                    Point3="20,-25" />
+                  <mssgle:LineSegment
+                    End="24.5,-25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.67701171875,1,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upsert using LOOKUP.Paths[Sortie de colonne dérivée1]"
+          TopLeft="601.5,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.5,67"
+              Start="0,0"
+              End="-33.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-29.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5,33.5"
+                    Point2="-33.5,33.5"
+                    Point3="-33.5,37.5" />
+                  <mssgle:LineSegment
+                    End="-33.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upsert using LOOKUP\Lookup Data table">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Workshop].[data]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upsert using LOOKUP\Data table destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5798,365 +6202,5 @@ UPDATE [Workshop].[data]
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Upsert using LOOKUP">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="137,42"
-          Id="Package\Upsert using LOOKUP\Data flat file"
-          TopLeft="167,41" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Upsert using LOOKUP\Lookup Data table"
-          TopLeft="282,136" />
-        <EdgeLayout
-          Id="Package\Upsert using LOOKUP.Paths[Sortie de source de fichier plat]"
-          TopLeft="235.5,83">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="130.5,53"
-              Start="0,0"
-              End="130.5,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="126.5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="126.5,26.5"
-                    Point2="130.5,26.5"
-                    Point3="130.5,30.5" />
-                  <mssgle:LineSegment
-                    End="130.5,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="239,42"
-          Id="Package\Upsert using LOOKUP\Sum and SYSDATE conditions 1"
-          TopLeft="17,100" />
-        <EdgeLayout
-          Id="Package\Upsert using LOOKUP.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="282,157">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26,-36"
-              Start="0,0"
-              End="-18.5,-36">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-9,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9,0"
-                    Point2="-13,0"
-                    Point3="-13,-4" />
-                  <mssgle:LineSegment
-                    End="-13,-32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,-32"
-                    Point2="-13,-36"
-                    Point3="-17,-36" />
-                  <mssgle:LineSegment
-                    End="-18.5,-36" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.50201171875,1,183.0040234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Upsert using LOOKUP\Data table destination"
-          TopLeft="44,191" />
-        <EdgeLayout
-          Id="Package\Upsert using LOOKUP.Paths[Sortie de colonne dérivée]"
-          TopLeft="136.5,142">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Upsert using LOOKUP\Update data table"
-          TopLeft="485,220" />
-        <NodeLayout
-          Size="239,42"
-          Id="Package\Upsert using LOOKUP\Sum and SYSDATE conditions 2"
-          TopLeft="482,111" />
-        <EdgeLayout
-          Id="Package\Upsert using LOOKUP.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="450,157">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32,-25"
-              Start="0,0"
-              End="24.5,-25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="12,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,0"
-                    Point2="16,0"
-                    Point3="16,-4" />
-                  <mssgle:LineSegment
-                    End="16,-21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16,-21"
-                    Point2="16,-25"
-                    Point3="20,-25" />
-                  <mssgle:LineSegment
-                    End="24.5,-25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-75.67701171875,1,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upsert using LOOKUP.Paths[Sortie de colonne dérivée1]"
-          TopLeft="601.5,153">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.5,67"
-              Start="0,0"
-              End="-33.5,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="-4,33.5" />
-                  <mssgle:LineSegment
-                    End="-29.5,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.5,33.5"
-                    Point2="-33.5,33.5"
-                    Point3="-33.5,37.5" />
-                  <mssgle:LineSegment
-                    End="-33.5,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Upsert using LOOKUP\Lookup Data table">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Workshop].[data]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Upsert using LOOKUP\Data table destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Split data file to 2 files">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Split data file to 2 files\Data flat file source"
-          TopLeft="60,60" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Split data file to 2 files\OUI or NON condition"
-          TopLeft="317,52" />
-        <EdgeLayout
-          Id="Package\Split data file to 2 files.Paths[Sortie de source de fichier plat]"
-          TopLeft="233,81">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84,-8"
-              Start="0,0"
-              End="76.5,-8">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38,0"
-                    Point2="42,0"
-                    Point3="42,-4" />
-                  <mssgle:LineSegment
-                    End="42,-4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42,-4"
-                    Point2="42,-8"
-                    Point3="46,-8" />
-                  <mssgle:LineSegment
-                    End="76.5,-8" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="204,42"
-          Id="Package\Split data file to 2 files\DATA OUI file destination"
-          TopLeft="41,164" />
-        <EdgeLayout
-          Id="Package\Split data file to 2 files.Paths[DATA_OUI]"
-          TopLeft="380.333333333333,94">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-237.333333333333,70"
-              Start="0,0"
-              End="-237.333333333333,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.3582089552239" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.3582089552239"
-                    Point2="0,28.3582089552239"
-                    Point3="-4,28.3582089552239" />
-                  <mssgle:LineSegment
-                    End="-233.333333333333,28.3582089552239" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-233.333333333333,28.3582089552239"
-                    Point2="-237.333333333333,28.3582089552239"
-                    Point3="-237.333333333333,32.3582089552239" />
-                  <mssgle:LineSegment
-                    End="-237.333333333333,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-142.796197916667,33.3582089552239,48.2590625,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Split data file to 2 files\DATA NON file destination"
-          TopLeft="348,177" />
-        <EdgeLayout
-          Id="Package\Split data file to 2 files.Paths[DATA_NON]"
-          TopLeft="439.666666666667,94">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.8333333333334,83"
-              Start="0,0"
-              End="12.8333333333334,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.6247334754798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.6247334754798"
-                    Point2="0,33.6247334754798"
-                    Point3="4,33.6247334754798" />
-                  <mssgle:LineSegment
-                    End="8.83333333333337,33.6247334754798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.83333333333337,33.6247334754798"
-                    Point2="12.8333333333334,33.6247334754798"
-                    Point3="12.8333333333334,37.6247334754798" />
-                  <mssgle:LineSegment
-                    End="12.8333333333334,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.0984309895833,38.6247334754798,51.0301953125,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
